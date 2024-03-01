@@ -22,7 +22,7 @@
     "jsonwebtoken": "^9.0.0",
     "mongodb": "^5.8.0",
     "multer": "^1.4.5-lts.1",
-    "nodemailer": "^6.9.3",
+    "nodemailer": "^6.9.9",
     "nodemon": "^2.0.22",
     "obscenity": "^0.1.4",
     "safe-compare": "^1.1.4",
