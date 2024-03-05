@@ -2,13 +2,28 @@ import nodemailer from "nodemailer";
 import { reportError } from "./errorHandler";
 require('dotenv').config();
 
+//don't even try mate these aren't real codes lol
+//const transporter = nodemailer.createTransport({
+//  host: "smtp.mailgun.org",
+//  port: 587,
+//  secure: false,
+//  auth: {
+//    user: 'postmaster@noreply.platerates.com',
+//    pass: '15fbe28a1a0ee074fcd02e751b18365e-b7b36bc2-268b9f45'
+//  }
+//});
+
+
 const transporter = nodemailer.createTransport({
-  host: "smtp.mailgun.org",
-  port: 587,
-  secure: false,
+  //I have got no clue why typescript doesn't like this lmao
+  //spent like 3 days switching back to javascript then back this so I give up lol it is what it is
+  // @ts-ignore
+  host: process.env.MailHost,
+  port: process.env.MailPort,
+  secure: process.env.MailAuthUser == "true",
   auth: {
-    user: 'postmaster@noreply.platerates.com',
-    pass: '15fbe28a1a0ee074fcd02e751b18365e-b7b36bc2-268b9f45'
+    user: process.env.MailAuthUser,
+    pass: process.env.MailAuthPass
   }
 });
 
